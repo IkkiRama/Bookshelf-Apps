@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="description" content="admin">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="admin">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Dashboard | Admin</title>
+    <link rel="stylesheet" href="font/riset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="FontAwesome/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <img src="img/img1.jpg" alt="img user">
+
+        <div class="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <aside>
+        <div class="profil">
+            <img src="img/img1.jpg" alt="img user">
+            <p>Rifki Romadhan</p>
+        </div>
+        <a href="index.html" class="perMenu active">
+            <div class="icon">
+                <i class="fas fa-home"></i>
+            </div>
+            <p>Home</p>
+        </a>
+
+        <a href="" class="perMenu">
+            <div class="icon">
+                <i class="fas fa-sign-out-alt"></i>
+            </div>
+            <p>Logout</p>
+        </a>
+
+    </aside>
+
+    <main>
+        <h2>Selamat Datang Di Bookshelf Apps</h2>
+
+        <!-- <form>
+            <div class="form-group">
+                <label for="title">Judul</label>
+                <input required type="text" id="title">
+            </div>
+
+            <div class="form-group">
+                <label for="author">Penulis</label>
+                <input required type="text" id="author">
+            </div>
+
+            <div class="form-group">
+                <label for="year">Tahun</label>
+                <input required type="text" id="year">
+            </div>
+
+            <br>
+            <label for="checkboxSelesaiDibaca">Selesai dibaca</label>
+            <input required type="checkbox" id="checkboxSelesaiDibaca">
+            <br>
+            <br>
+
+            <button class="btn btn-primary" id="add" type="submit">Tambah</button>
+            <button class="btn btn-warning" id="update" type="submit" style="display: none;">Update</button>
+        </form> -->
+
+
+        <form action="" class="mt-50">
+            <div class="form-group">
+                <label for="search">Cari Buku</label>
+                <div class="input-group mt-20">
+                    <input type="text" id="inputSearch" placeholder="Cari Buku yang anda cari...">
+                    <button id="btnSearch" class="btn btn-primary">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <button class="mt-20 btn btn-primary" id="modalToggle">Tambah Buku</button>
+            <button class="mt-20 btn btn-danger" id="removeAll" type="submit">Hapus Semua Buku</button>
+        </form>
+
+
+        <div class="daftarBuku">
+            <article>
+                <h3>Buku belum selesai dibaca</h3>
+
+                <div id="belumDiBaca"></div>
+            </article>
+
+            <article>
+                <h3>Buku selesai dibaca</h3>
+                <div id="sudahDiBaca"></div>
+            </article>
+        </div>
+    </main>
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Tambah Buku</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="title">Judul</label>
+                        <input required type="text" id="title">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="author">Penulis</label>
+                        <input required type="text" id="author">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="year">Tahun</label>
+                        <input required type="text" id="year">
+                    </div>
+
+                    <br>
+                    <label for="checkboxSelesaiDibaca">Selesai dibaca</label>
+                    <input required type="checkbox" id="checkboxSelesaiDibaca">
+                    <br>
+                    <br>
+
+                    <button class="btn btn-primary" id="add" type="submit">Tambah</button>
+                    <button class="btn btn-warning" id="update" type="submit" style="display: none;">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="FontAwesome/js/all.min.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
