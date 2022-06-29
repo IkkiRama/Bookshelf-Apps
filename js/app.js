@@ -96,11 +96,13 @@ const SaveAndRender = () => {
   renderData(localStorageData);
 };
 
-if (title.length <= 3 || author.length <= 3 || year.length <= 3) {
-  add.addEventListener("click", (event) => {
-    event.preventDefault();
-    title.classList.add("is-invalid");
-
+const addData = (event) => {
+  event.preventDefault();
+  if (
+    title.value.length >= 3 &&
+    author.value.length >= 3 &&
+    year.value.length >= 3
+  ) {
     let buku = {
       id: new Date().getTime(),
       title: title.value,
@@ -114,8 +116,8 @@ if (title.length <= 3 || author.length <= 3 || year.length <= 3) {
     reset();
     alert("Data berhasil ditambahkan");
     modalOverlay.classList.toggle("show");
-  });
-}
+  }
+};
 
 const hapusBuku = (id) => {
   let dialogConfirm = confirm("Apakah anda yakin ingin menghapus buku ini?");
