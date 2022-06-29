@@ -149,26 +149,32 @@ const editBuku = (id) => {
 
 update.addEventListener("click", (event) => {
   event.preventDefault();
-  let buku = {
-    id: idBuku,
-    title: title.value,
-    author: author.value,
-    year: year.value,
-    isComplete: checkboxSelesaiDibaca.checked,
-  };
-  localStorageData.filter((item) => {
-    if (item.id === idBuku) {
-      localStorageData.splice(localStorageData.indexOf(item), 1, buku);
-    }
-  });
+  if (
+    title.value.length >= 3 &&
+    author.value.length >= 3 &&
+    year.value.length >= 3
+  ) {
+    let buku = {
+      id: idBuku,
+      title: title.value,
+      author: author.value,
+      year: year.value,
+      isComplete: checkboxSelesaiDibaca.checked,
+    };
+    localStorageData.filter((item) => {
+      if (item.id === idBuku) {
+        localStorageData.splice(localStorageData.indexOf(item), 1, buku);
+      }
+    });
 
-  SaveAndRender();
-  reset();
-  alert("Data berhasil diubah");
+    SaveAndRender();
+    reset();
+    alert("Data berhasil diubah");
 
-  add.style.display = "flex";
-  update.style.display = "none";
-  modalOverlay.classList.toggle("show");
+    add.style.display = "flex";
+    update.style.display = "none";
+    modalOverlay.classList.toggle("show");
+  }
 });
 
 const changeStatus = (id) => {
