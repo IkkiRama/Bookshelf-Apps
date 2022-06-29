@@ -96,22 +96,26 @@ const SaveAndRender = () => {
   renderData(localStorageData);
 };
 
-add.addEventListener("click", (event) => {
-  event.preventDefault();
-  let buku = {
-    id: new Date().getTime(),
-    title: title.value,
-    author: author.value,
-    year: year.value,
-    isComplete: checkboxSelesaiDibaca.checked,
-  };
+if (title.length <= 3 || author.length <= 3 || year.length <= 3) {
+  add.addEventListener("click", (event) => {
+    event.preventDefault();
+    title.classList.add("is-invalid");
 
-  localStorageData.push(buku);
-  SaveAndRender();
-  reset();
-  alert("Data berhasil ditambahkan");
-  modalOverlay.classList.toggle("show");
-});
+    let buku = {
+      id: new Date().getTime(),
+      title: title.value,
+      author: author.value,
+      year: year.value,
+      isComplete: checkboxSelesaiDibaca.checked,
+    };
+
+    localStorageData.push(buku);
+    SaveAndRender();
+    reset();
+    alert("Data berhasil ditambahkan");
+    modalOverlay.classList.toggle("show");
+  });
+}
 
 const hapusBuku = (id) => {
   let dialogConfirm = confirm("Apakah anda yakin ingin menghapus buku ini?");
