@@ -501,7 +501,7 @@ main h2 {
 
 .modal-body {
     overflow-y: auto;
-    height: 60vh;
+    height: 80%;
     padding: 20px;
 }
 
